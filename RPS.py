@@ -1,15 +1,6 @@
 import math
 import random
 pos=[-1,0,1]
-def diff(m,p=[-1,0,1]):
-    d=100
-    val=100
-    for i in p:
-        if math.fabs(i-d)<d:
-            d=math.fabs(-1-d)
-            val=i
-    return i
-
 def change(a=1):
     if a==-1:
         return 'Rock'
@@ -27,8 +18,6 @@ def winning(com,pla):
         return False
 
 outcome=[-1,-1,-1,-1,0,0,0,1,1,1]
-def avg(a):
-    return (sum(a)/len(a))
 
 def highprob(a):
     rock=(a.count(-1)/len(a))
@@ -45,8 +34,7 @@ state='lose'
 u_wins=0
 comp_wins=0
 
-counter=100
-while counter>=0:
+while 1:
     n=int(input("insert as fllowing(Rock:-1 Paper:0 Scissor:1) : "))
     a=highprob(outcome)
 
