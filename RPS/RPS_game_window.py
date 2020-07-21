@@ -8,29 +8,32 @@ from kivy.uix.button import Button
 from kivy.uix.widget import Widget
 from kivy.properties import ObjectProperty
 
-os.chdir(os.cwd())
+os.chdir(os.getcwd())
 import main_body
-n=int()
+global n
+n = 0
 class MyGrid(Widget):
-	p_wins = ObjectProperty(None)
-	com_wins = ObjectProperty(None)
-	def win_count(self):
-		self.p_wins.text = self.p_wins.text
-		self.com_wins.text = self.com_wins.text
+		global p_wins
+		global com_wins
+		p_wins = ObjectProperty(None)
+		com_wins = ObjectProperty(None)
 		
-	def rock(self):
-		n=-1
-	def paper(self):
-		n=0
-	def scissor(self):
-		n=1
-	
-	def main(self):
-		p_wins,com_wins=main_body.main(n)
-		win_count()
+		def rock(self):
+				n=-1
+		def paper(self):
+				n=0
+		def scissor(self):
+				n=1
+		
+		def main(self):
+				p_wins,com_wins=main_body.main(n)
+				
+				self.p_wins.text = str(p_wins)
+				self.com_wins.text = str(com_wins)
+
 class RPSApp(App):
-	def build(self):
-		return MyGrid()
+		def build(self):
+				return MyGrid()
 
 if __name__=="__main__":
-	RPSApp().run()
+		RPSApp().run()
