@@ -3,10 +3,16 @@
 	com_wins:com_wins.__self__
 
 	GridLayout:
-		rows:3
+		rows:4
 		size: root.width-20, root.height-20
 		pos: 10,10
 		
+		GridLayout:
+			cols:2
+			Label:
+				text:"Player"
+			Label:
+				text:"Computer"
 		GridLayout:
 			cols:2
 			Label:
