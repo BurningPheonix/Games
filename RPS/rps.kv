@@ -1,1 +1,37 @@
+<MyGrid>:
+	p_wins:p_wins.__self__
+	com_wins:com_wins.__self__
 
+	GridLayout:
+		rows:3
+		size: root.width-20, root.height-20
+		pos: 10,10
+		
+		GridLayout:
+			cols:2
+			Label:
+				id:p_wins
+				text:"0"
+			Label:
+				id:com_wins
+				text:"0"
+		
+		GridLayout:
+			cols:3
+			Button:
+				text:"Rock"
+				on_press:root.rock()
+			Button:
+				text:"Paper"
+				on_press:root.paper()
+			Button:
+				text:"Scissor"
+				on_press:root.scissor()
+		GridLayout:
+			cols:1
+			Button:
+				text:"Submit"
+				on_press:root.main()
+			Button:
+				text:"Exit"
+				on_press:app.stop()
