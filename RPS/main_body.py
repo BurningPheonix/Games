@@ -35,24 +35,24 @@ u_wins=0
 comp_wins=0
 
 def main(n):
-	if n in [-1,0,1]:
-		a=highprob(outcome)
-		
-		print('The computer chooses: ',change(a))
-		if winning(a,n)==True:
-			#You win
-			u_wins+=1
-		elif winning(a,n)==False:
-			#Computer wins
-			comp_wins+=1
-		else:
-			#Tie
-			pass
-		outcome.append(n)
-		outcome=outcome[1:]
-		
-		return u_wins,comp_wins
+    global outcome
+    global u_wins
+    global comp_wins
+    if n in [-1,0,1]:
+        a=highprob(outcome)
+        print('The computer chooses: ',change(a))
+        if winning(a,n)==True:
+            #You win
+            u_wins+=1
+        elif winning(a,n)==False:
+            #Computer wins
+            comp_wins+=1
+        else:
+            #Tie
+            pass
+        outcome.append(n)
+        outcome=outcome[1:]
+        return u_wins,comp_wins
 
 if __name__ == "__main__":
 	main()
-    
