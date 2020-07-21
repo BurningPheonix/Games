@@ -34,24 +34,24 @@ state='lose'
 u_wins=0
 comp_wins=0
 
-def main():
-	while 1:
-		n=int(input("insert as fllowing(Rock:-1 Paper:0 Scissor:1) : "))
+def main(n):
+	if n in [-1,0,1]:
 		a=highprob(outcome)
 		
 		print('The computer chooses: ',change(a))
 		if winning(a,n)==True:
-			print("You win")
+			#You win
 			u_wins+=1
 		elif winning(a,n)==False:
-			print("Computer wins")
+			#Computer wins
 			comp_wins+=1
 		else:
-			print("Tie")
-	print('You:{} Computer:{}'.format(u_wins,comp_wins))
-	outcome.append(n)
-	outcome=outcome[1:]
-	print()
+			#Tie
+			pass
+		outcome.append(n)
+		outcome=outcome[1:]
+		
+		return u_wins,comp_wins
 
 if __name__ == "__main__":
 	main()
