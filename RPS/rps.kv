@@ -1,18 +1,29 @@
 <MyGrid>:
 	p_wins:p_wins.__self__
 	com_wins:com_wins.__self__
-
+	comp_choice:comp_choice.__self__
+	p_choice:p_choice.__self__
 	GridLayout:
-		rows:4
+		rows:5
 		size: root.width-20, root.height-20
 		pos: 10,10
 		
 		GridLayout:
 			cols:2
 			Label:
+				bold:True
 				text:"Player"
 			Label:
+				bold:True
 				text:"Computer"
+		GridLayout:
+			cols:2
+			Label:
+				id:comp_choice
+				text:"The game begins"
+			Label:
+				id:p_choice
+				text:"Your choice is shown here"
 		GridLayout:
 			cols:2
 			Label:
@@ -34,7 +45,7 @@
 				text:"Scissor"
 				on_press:root.scissor()
 		GridLayout:
-			cols:1
+			cols:2
 			Button:
 				text:"Submit"
 				on_press:root.main()
