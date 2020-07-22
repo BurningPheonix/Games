@@ -38,6 +38,8 @@ def main(n):
     global outcome
     global u_wins
     global comp_wins
+    global comp_choice
+    global p_choice
     if n in [-1,0,1]:
         a=highprob(outcome)
         print('The computer chooses: ',change(a))
@@ -52,7 +54,9 @@ def main(n):
             pass
         outcome.append(n)
         outcome=outcome[1:]
-        return u_wins,comp_wins
+        comp_choice = "The Computer choose : "+change(a)
+        p_choice = "You have chosen : "+change(n)
+        return u_wins,comp_wins,comp_choice,p_choice
 
 if __name__ == "__main__":
 	main()
