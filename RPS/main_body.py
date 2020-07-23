@@ -17,6 +17,7 @@ def winning(com,pla):
     else:
         return False
 
+global outcome
 outcome=[-1,-1,-1,-1,0,0,0,1,1,1]
 
 def highprob(a):
@@ -31,6 +32,10 @@ def highprob(a):
         return -1
     
 state='lose'
+global u_wins
+global comp_wins
+global comp_choice
+global p_choice
 u_wins=0
 comp_wins=0
 
@@ -58,5 +63,10 @@ def main(n):
         p_choice = "You have chosen : "+change(n)
         return u_wins,comp_wins,comp_choice,p_choice
 
+def rezero():
+    global outcome
+    global u_wins
+    u_wins = 0
+    comp_wins = 0
 if __name__ == "__main__":
 	main()
