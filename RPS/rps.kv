@@ -4,7 +4,7 @@
 	comp_choice:comp_choice.__self__
 	p_choice:p_choice.__self__
 	GridLayout:
-		rows:5
+		rows:6
 		size: root.width-20, root.height-20
 		pos: 10,10
 		
@@ -23,7 +23,8 @@
 				text:"Your choice is shown here"
 			Label:
 				id:comp_choice
-				text:"The game begins"
+				text:"The CPU's choice is shown here"
+			
 		GridLayout:
 			cols:2
 			Label:
@@ -49,6 +50,11 @@
 			Button:
 				text:"Submit"
 				on_press:root.main()
+			Button:
+				text:"Reset"
+				on_press:root.reset()
+		GridLayout:
+			cols:1
 			Button:
 				text:"Exit"
 				on_press:app.stop()
