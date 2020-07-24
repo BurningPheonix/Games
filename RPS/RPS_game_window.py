@@ -21,20 +21,14 @@ class MyGrid(Widget):
                 com_wins = ObjectProperty(None)
                 comp_choice = ObjectProperty(None)
                 p_choice = ObjectProperty(None)
-                def rock(self):
+                def hand(self,i):
+                    #Rock=-1 Paper=0 Scissor=1
                         global n
-                        n=-1
-                def paper(self):
-                        global n
-                        n=0
-                def scissor(self):
-                        global n
-                        n=1
-                def main(self):
                         global p_wins
                         global com_wins
                         global comp_choice
                         global p_choice
+                        n=i
                         p_wins, com_wins, comp_choice ,p_choice = main_body.main(n)
                         self.p_wins.text = str(p_wins)
                         self.com_wins.text = str(com_wins)
