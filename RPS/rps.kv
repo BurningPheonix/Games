@@ -19,9 +19,11 @@
 		GridLayout:
 			cols:2
 			Label:
+				color:0,1,0,1
 				id:p_choice
 				text:"Your choice is shown here"
 			Label:
+				color:0,1,0,1
 				id:comp_choice
 				text:"The CPU's choice is shown here"
 			
@@ -37,19 +39,19 @@
 		GridLayout:
 			cols:3
 			Button:
+				background_color:(0,0,1,1)
 				text:"Rock"
-				on_press:root.rock()
+				on_press:root.hand(-1)
 			Button:
+				background_color:(0,0,1,1)
 				text:"Paper"
-				on_press:root.paper()
+				on_press:root.hand(0)
 			Button:
+				background_color:(0,0,1,1)
 				text:"Scissor"
-				on_press:root.scissor()
+				on_press:root.hand(1)
 		GridLayout:
-			cols:2
-			Button:
-				text:"Submit"
-				on_press:root.main()
+			cols:1
 			Button:
 				text:"Reset"
 				on_press:root.reset()
@@ -57,4 +59,5 @@
 			cols:1
 			Button:
 				text:"Exit"
+				background_color: (1,0,0, 1.0)
 				on_press:app.stop()
